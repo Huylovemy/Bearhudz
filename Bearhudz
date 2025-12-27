@@ -3675,7 +3675,7 @@ l_ScreenGui_0.Parent = game.CoreGui
 local l_ImageButton_0 = Instance.new("ImageButton")
 l_ImageButton_0.Size = UDim2.new(0, 50, 0, 50)
 l_ImageButton_0.Position = UDim2.new(0.15, 0, 0.15, 0)
-l_ImageButton_0.Image = "rbxassetid://120213707198275"
+l_ImageButton_0.Image = "rbxassetid://134852113716171"
 l_ImageButton_0.BackgroundTransparency = 1
 l_ImageButton_0.Parent = l_ScreenGui_0
 local l_UICorner_0 = Instance.new("UICorner")
@@ -3755,28 +3755,22 @@ local v494 = v466:MakeTab({"PvP,Player", "user"})
 local v495 = v466:MakeTab({"Shop", "shoppingCart"})
 local v496 = v466:MakeTab({"Settings", "settings"})
 v484:AddDiscordInvite({
-    Name = "Tham Gia Discord",
-    Description = "Link Sever Discord",
-    Logo = "rbxassetid://110657725541747",
-    Invite = "https://discord.gg/kK2vMrUsQy"
+    Name = "Follow Tik Tok",
+    Description = "Link Tik Tok",
+    Logo = "rbxassetid://134852113716171",
+    Invite = "https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZeMVP8BrV"
 })
 v484:AddDiscordInvite({
-    Name = "Tu\225\186\165n Anh (T\195\186nnAngg)",
-    Description = "Facebook C\225\187\167a B\225\187\145 \196\144\195\162y Nh\195\179c",
-    Logo = "rbxassetid://110657725541747",
-    Invite = "https://www.facebook.com/tuananhiosdz"
+    Name = "Follow Facebook",
+    Description = "Facebook",
+    Logo = "rbxassetid://134852113716171",
+    Invite = "https://www.facebook.com/share/1Kt9cMJmM3/"
 })
 v484:AddDiscordInvite({
-    Name = "Tu\225\186\165n Anh IOS",
-    Description = "YouTube C\225\187\167a B\225\187\145 \196\144\195\162y Nh\195\179c",
+    Name = "Follow Youtube",
+    Description = "YouTube",
     Logo = "rbxassetid://110657725541747",
-    Invite = "https://www.youtube.com/@tuananhios"
-})
-v484:AddDiscordInvite({
-    Name = "Tu\225\186\165n Anh IOS",
-    Description = "TikTok C\225\187\167a B\225\187\145 \196\144\195\162y Nh\195\179c",
-    Logo = "rbxassetid://110657725541747",
-    Invite = "https://www.tiktok.com/@tuananh_ios?_t=ZS-8z2MDp8Jn67&_r=1"
+    Invite = "https://youtube.com/@ttquanghuy?si=t1ubWQy12VcM2sjS"
 })
 local _ = v485:AddSection({"Select Melee,Sword,Gun,Fruit"})
 _G.SelectWeapon = "Melee"
