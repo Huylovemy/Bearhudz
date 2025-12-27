@@ -3686,13 +3686,8 @@ l_UIStroke_0.Thickness = 2
 l_UIStroke_0.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 l_UIStroke_0.Parent = l_ImageButton_0
 local v471 = {
-    Color3.fromRGB(255, 0, 0),
-    Color3.fromRGB(255, 127, 0),
-    Color3.fromRGB(255, 255, 0),
-    Color3.fromRGB(0, 255, 0),
-    Color3.fromRGB(0, 255, 255),
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(139, 0, 255)
+    Color3.fromRGB(0, 0, 0),
+    Color3.fromRGB(255,255,255)
 }
 task.spawn(function()
     local v472 = 1
