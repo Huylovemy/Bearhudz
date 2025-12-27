@@ -1,4 +1,4 @@
--- This file was deobfuscated using Scene Deobfuscator https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZgXyO6eLx :D
+-- This file was deobfuscated using Scene Deobfuscator https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZhzVqezsP :D
 
 hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Death), function()
     -- empty block
@@ -3664,7 +3664,7 @@ function CheckItemBPCRBPCR(v463)
         end
     end
 end
-local v466 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud"))():MakeWindow({
+local v466 = loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDangNhoEm/UiRedz/refs/heads/main/RedzUiV.txt"))():MakeWindow({
     Title = "Bear Hub",
     SubTitle = "by Quang Huy",
     SaveFolder = "Redz | redz lib v5.lua"
@@ -3673,7 +3673,7 @@ local l_ScreenGui_0 = Instance.new("ScreenGui")
 l_ScreenGui_0.Name = "ControlGUI"
 l_ScreenGui_0.Parent = game.CoreGui
 local l_ImageButton_0 = Instance.new("ImageButton")
-l_ImageButton_0.Size = UDim2.new(0, 50, 0, 50)
+l_ImageButton_0.Size = UDim2.new(0, 20, 0, 20)
 l_ImageButton_0.Position = UDim2.new(0.15, 0, 0.15, 0)
 l_ImageButton_0.Image = "rbxassetid://134852113716171"
 l_ImageButton_0.BackgroundTransparency = 1
@@ -3755,22 +3755,28 @@ local v494 = v466:MakeTab({"PvP,Player", "user"})
 local v495 = v466:MakeTab({"Shop", "shoppingCart"})
 local v496 = v466:MakeTab({"Settings", "settings"})
 v484:AddDiscordInvite({
-    Name = "Follow Tik Tok",
-    Description = "Link Tik Tok",
+    Name = "Follow TikTok",
+    Description = "TikTok",
     Logo = "rbxassetid://134852113716171",
-    Invite = "https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZeMVP8BrV"
+    Invite = "https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZjnBZSSjA"
 })
 v484:AddDiscordInvite({
     Name = "Follow Facebook",
     Description = "Facebook",
     Logo = "rbxassetid://134852113716171",
-    Invite = "https://www.facebook.com/share/1Kt9cMJmM3/"
+    Invite = "https://www.facebook.com/share/17q1WXNcBQ/"
 })
 v484:AddDiscordInvite({
     Name = "Follow Youtube",
     Description = "YouTube",
     Logo = "rbxassetid://134852113716171",
-    Invite = "https://youtube.com/@ttquanghuy?si=t1ubWQy12VcM2sjS"
+    Invite = "https://youtube.com/@ttquanghuy?si=hgV_obVLjhgxSBEq"
+})
+v484:AddDiscordInvite({
+    Name = "Follow TikTok",
+    Description = "TikTok",
+    Logo = "rbxassetid://134852113716171",
+    Invite = "https://www.tiktok.com/@huyckvkne?_r=1&_t=ZS-92ZjgILlydN"
 })
 local _ = v485:AddSection({"Select Melee,Sword,Gun,Fruit"})
 _G.SelectWeapon = "Melee"
@@ -4052,18 +4058,6 @@ spawn(function()
         end
     end
 end)
-local function v527(v525)
-    pcall(function()
-        if type(topos) ~= "function" then
-            local l_LocalPlayer_5 = game:GetService("Players").LocalPlayer
-            if l_LocalPlayer_5 and l_LocalPlayer_5.Character and l_LocalPlayer_5.Character:FindFirstChild("HumanoidRootPart") then
-                l_LocalPlayer_5.Character.HumanoidRootPart.CFrame = v525
-            end
-        else
-            topos(v525)
-        end
-    end)
-end
 local function v530()
     local _ = game:GetService("Players").LocalPlayer
     local l_PlaceId_2 = game.PlaceId
@@ -4081,41 +4075,87 @@ local function v530()
         return CFrame.new(924.405, 6.366, 4476.727)
     end
 end
-spawn(function()
+local _ = v485:AddSection({"Event Boss Pain New"})
+local v537 = {}
+if World1 then
+    v537 = {
+        "The Gorilla King",
+        "Bobby",
+        "Yeti",
+        "Mob Leader",
+        "Vice Admiral",
+        "Warden",
+        "Chief Warden",
+        "Swan",
+        "Magma Admiral",
+        "Fishman Lord",
+        "Wysper",
+        "Thunder God",
+        "Cyborg",
+        "Saber Expert"
+    }
+elseif World2 then
+    v537 = {
+        "Diamond",
+        "Jeremy",
+        "Fajita",
+        "Don Swan",
+        "Smoke Admiral",
+        "Cursed Captain",
+        "Darkbeard",
+        "Order",
+        "Awakened Ice Admiral",
+        "Tide Keeper"
+    }
+elseif World3 then
+    v537 = {
+        "",
+        "Stone",
+        "Island Empress",
+        "Hydra Leader",
+        "Kilo Admiral",
+        "Captain Elephant",
+        "Beautiful Pirate",
+        "rip_indra True Form",
+        "Longma",
+        "Soul Reaper",
+        "Cake Queen"
+    }
+end
+v485:AddDropdown({
+    Name = "Auto Select Boss",
+    Description = "Ch\225\187\141n Boss C\225\186\167n Farm",
+    Options = v537,
+    Default = v537[1],
+    Callback = function(v538)
+        _G.SelectBoss = v538
+    end
+})
+v485:AddToggle({
+    Name = "Farm Boss Pain",
+    Description = "Farm Boss \196\144\195\163 Ch\225\187\141n",
+    Default = false,
+    Callback = function(v539)
+        _G.BossPain = v539
+        StopTween(_G.BossPain)
+    end
+})
+task.spawn(function()
     while task.wait() do
-        if _G.FarmSummer then
+        if _G.BossPain and _G.SelectBoss then
             pcall(function()
-                local v531 = v530()
-                if v531 then
-                    v527(v531 + Vector3.new(0, 50, 0))
-                    for _, v533 in pairs(game.Workspace.Enemies:GetChildren()) do
-                        local l_Humanoid_0 = v533:FindFirstChild("Humanoid")
-                        local l_HumanoidRootPart_4 = v533:FindFirstChild("HumanoidRootPart")
-                        if l_Humanoid_0 and l_HumanoidRootPart_4 and l_Humanoid_0.Health > 0 and l_Humanoid_0.DisplayName:find("%[Electrified%]") then
+                if not game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
+                    if game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss) then
+                        topos(game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame * CFrame.new(5, 10, 2))
+                    end
+                else
+                    for _, v541 in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if v541.Name == _G.SelectBoss and v541:FindFirstChild("Humanoid") and v541:FindFirstChild("HumanoidRootPart") and v541.Humanoid.Health > 0 then
                             repeat
                                 task.wait()
                                 AutoHaki()
                                 EquipWeapon(_G.SelectWeapon)
-                                l_HumanoidRootPart_4.CanCollide = false
-                                l_Humanoid_0.WalkSpeed = 0
-                                if v533:FindFirstChild("Head") then
-                                    v533.Head.CanCollide = false
-                                end
-                                v527(l_HumanoidRootPart_4.CFrame * CFrame.new(0, 30, 0))
-                                game:GetService("VirtualUser"):CaptureController()
-                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672))
-                            until not _G.FarmSummer or not v533.Parent or l_Humanoid_0.Health <= 0
-                        end
-                    end
-                end
-            end)
-        end
-    end
-end)
-local _ = v485:AddSection({"AutoRaidPirate"})
-v485:AddToggle({
-    Name = "Farm Pirate",
-    Description = "\196\144\195\161nh H\225\186\163i T\225\186\183c Tr\195\170n Ph\195\161o \196\144noidRootPart.CanCollide = false
+                                v541.HumanoidRootPart.CanCollide = false
                                 v541.Humanoid.WalkSpeed = 0
                                 v541.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                 topos(v541.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
@@ -8784,7 +8824,7 @@ if l_LocalPlayer_18.Character then
     v1135(l_LocalPlayer_18.Character)
 end
 v494:AddSlider({
-    Title = "Speed Ch\225\186\161y by Quanghuy",
+    Title = "Speed Ch\225\186\161y by Quang Huy",
     Min = 26,
     Max = 300,
     Default = getgenv().WalkSpeedValue,
@@ -8797,7 +8837,7 @@ v494:AddSlider({
     end
 })
 v494:AddSlider({
-    Title = "Nh\225\186\163y Cao by Quanghuy",
+    Title = "Nh\225\186\163y Cao by Qunag Huy",
     Min = 50,
     Max = 500,
     Default = getgenv().JumpValue,
