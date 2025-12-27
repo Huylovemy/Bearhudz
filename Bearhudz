@@ -1,4 +1,4 @@
--- This file was deobfuscated using Scene Deobfuscator discord.gg/deobfuscate :D
+-- This file was deobfuscated using Scene Deobfuscator https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZgXyO6eLx :D
 
 hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Death), function()
     -- empty block
@@ -3757,19 +3757,19 @@ local v496 = v466:MakeTab({"Settings", "settings"})
 v484:AddDiscordInvite({
     Name = "Follow Tik Tok",
     Description = "Link Tik Tok",
-    Logo = "rbxassetid://134852113716171",
+    Logo = "rbxassetid://113646725329236",
     Invite = "https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZeMVP8BrV"
 })
 v484:AddDiscordInvite({
     Name = "Follow Facebook",
     Description = "Facebook",
-    Logo = "rbxassetid://134852113716171",
+    Logo = "rbxassetid://113646725329236",
     Invite = "https://www.facebook.com/share/1Kt9cMJmM3/"
 })
 v484:AddDiscordInvite({
     Name = "Follow Youtube",
     Description = "YouTube",
-    Logo = "rbxassetid://110657725541747",
+    Logo = "rbxassetid://113646725329236",
     Invite = "https://youtube.com/@ttquanghuy?si=t1ubWQy12VcM2sjS"
 })
 local _ = v485:AddSection({"Select Melee,Sword,Gun,Fruit"})
@@ -4052,16 +4052,6 @@ spawn(function()
         end
     end
 end)
-local _ = v485:AddSection({"Farm Summer Token New"})
-v485:AddToggle({
-    Name = "Auto Farm Summer Token",
-    Description = "T\225\187\177 \196\144\225\187\153ng Di Chuy\225\187\131n \196\144\225\186\191n V\225\187\139 Tr\195\173 Summer Token Theo Sea V\195\160 Farm Qu\195\161i [Electrified]",
-    Default = false,
-    Callback = function(v524)
-        _G.FarmSummer = v524
-        StopTween(_G.FarmSummer)
-    end
-})
 local function v527(v525)
     pcall(function()
         if type(topos) ~= "function" then
