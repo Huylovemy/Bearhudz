@@ -3664,7 +3664,7 @@ function CheckItemBPCRBPCR(v463)
         end
     end
 end
-local v466 = loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDangNhoEm/UiRedz/refs/heads/main/RedzUiV.txt"))():MakeWindow({
+local v466 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud"))():MakeWindow({
     Title = "Bear Hub",
     SubTitle = "by Quang Huy",
     SaveFolder = "Redz | redz lib v5.lua"
