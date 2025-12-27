@@ -3757,19 +3757,19 @@ local v496 = v466:MakeTab({"Settings", "settings"})
 v484:AddDiscordInvite({
     Name = "Follow Tik Tok",
     Description = "Link Tik Tok",
-    Logo = "rbxassetid://113646725329236",
+    Logo = "rbxassetid://134852113716171",
     Invite = "https://www.tiktok.com/@huyscriptth?_r=1&_t=ZS-92ZeMVP8BrV"
 })
 v484:AddDiscordInvite({
     Name = "Follow Facebook",
     Description = "Facebook",
-    Logo = "rbxassetid://113646725329236",
+    Logo = "rbxassetid://134852113716171",
     Invite = "https://www.facebook.com/share/1Kt9cMJmM3/"
 })
 v484:AddDiscordInvite({
     Name = "Follow Youtube",
     Description = "YouTube",
-    Logo = "rbxassetid://113646725329236",
+    Logo = "rbxassetid://134852113716171",
     Invite = "https://youtube.com/@ttquanghuy?si=t1ubWQy12VcM2sjS"
 })
 local _ = v485:AddSection({"Select Melee,Sword,Gun,Fruit"})
@@ -4112,87 +4112,10 @@ spawn(function()
         end
     end
 end)
-local _ = v485:AddSection({"Event Boss Pain New"})
-local v537 = {}
-if World1 then
-    v537 = {
-        "The Gorilla King",
-        "Bobby",
-        "Yeti",
-        "Mob Leader",
-        "Vice Admiral",
-        "Warden",
-        "Chief Warden",
-        "Swan",
-        "Magma Admiral",
-        "Fishman Lord",
-        "Wysper",
-        "Thunder God",
-        "Cyborg",
-        "Saber Expert"
-    }
-elseif World2 then
-    v537 = {
-        "Diamond",
-        "Jeremy",
-        "Fajita",
-        "Don Swan",
-        "Smoke Admiral",
-        "Cursed Captain",
-        "Darkbeard",
-        "Order",
-        "Awakened Ice Admiral",
-        "Tide Keeper"
-    }
-elseif World3 then
-    v537 = {
-        "",
-        "Stone",
-        "Island Empress",
-        "Hydra Leader",
-        "Kilo Admiral",
-        "Captain Elephant",
-        "Beautiful Pirate",
-        "rip_indra True Form",
-        "Longma",
-        "Soul Reaper",
-        "Cake Queen"
-    }
-end
-v485:AddDropdown({
-    Name = "Auto Select Boss",
-    Description = "Ch\225\187\141n Boss C\225\186\167n Farm",
-    Options = v537,
-    Default = v537[1],
-    Callback = function(v538)
-        _G.SelectBoss = v538
-    end
-})
+local _ = v485:AddSection({"AutoRaidPirate"})
 v485:AddToggle({
-    Name = "Farm Boss Pain",
-    Description = "Farm Boss \196\144\195\163 Ch\225\187\141n",
-    Default = false,
-    Callback = function(v539)
-        _G.BossPain = v539
-        StopTween(_G.BossPain)
-    end
-})
-task.spawn(function()
-    while task.wait() do
-        if _G.BossPain and _G.SelectBoss then
-            pcall(function()
-                if not game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
-                    if game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss) then
-                        topos(game:GetService("ReplicatedStorage"):FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame * CFrame.new(5, 10, 2))
-                    end
-                else
-                    for _, v541 in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                        if v541.Name == _G.SelectBoss and v541:FindFirstChild("Humanoid") and v541:FindFirstChild("HumanoidRootPart") and v541.Humanoid.Health > 0 then
-                            repeat
-                                task.wait()
-                                AutoHaki()
-                                EquipWeapon(_G.SelectWeapon)
-                                v541.HumanoidRootPart.CanCollide = false
+    Name = "Farm Pirate",
+    Description = "\196\144\195\161nh H\225\186\163i T\225\186\183c Tr\195\170n Ph\195\161o \196\144noidRootPart.CanCollide = false
                                 v541.Humanoid.WalkSpeed = 0
                                 v541.HumanoidRootPart.Size = Vector3.new(80, 80, 80)
                                 topos(v541.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
