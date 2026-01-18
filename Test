@@ -70,13 +70,8 @@ l_ImageButton_0.MouseButton1Click:Connect(function()
         v466:Minimize(true)
     end
 end)
-local Tab1o = MakeTab({Name = "PvP"})
-     local Tab2o = MakeTab({Name = "Farm"})
-     local Tab3o = MakeTab({Name = "Sever"})
-     local Tab4o = MakeTab({Name = "Khác"})
-     local Tab5o = MakeTab({Name = "99Night"})
-    local Tab6o = MakeTab({Name = "Update"})
-MainTab:AddButton({
+local Tab1o = v466:MakeTab({"PvP", "Sword"})
+Tab1o:AddButton({
     Name = "Bearhub",
     Callback = function()
 loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/Bearhub.lua"))()
