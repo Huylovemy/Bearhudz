@@ -1,0 +1,94 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud.txt"))()
+-- 1. Tạo Cửa Sổ (Window)
+local Window = redzlib:MakeWindow({
+	"Huyzhud Hub",       -- Tên Hub (Title)
+	"Phiên bản 1.1",     -- Tên phụ (Subtitle)
+	"Huyzhud_Config.json" -- Tên file để lưu cài đặt (Config)
+})
+
+-- 2. Tạo Tab (Ví dụ Tab Chính)
+local MainTab = Window:MakeTab({
+	"Trang Chủ", -- Tên Tab
+	"home"       -- Icon (Dựa trên danh sách icon trong source: home, user, settings, etc.)
+})
+
+-- 3. Tạo Các Chức Năng (Elements) trong Tab
+
+-- >> Tạo Section (Tiêu đề mục)
+MainTab:AddSection("Chức Năng Chính")
+
+-- >> Tạo Button (Nút bấm)
+MainTab:AddButton({
+	"In Lời Chào",           -- Tên nút
+	"In ra console (F9)",    -- Mô tả (Description)
+	function()               -- Hàm thực thi khi bấm
+		print("Xin chào! Huyzhud Hub đang hoạt động.")
+	end
+})
+
+-- >> Tạo Toggle (Nút bật/tắt)
+MainTab:AddToggle({
+	"Tự Động Farm",          -- Tên Toggle
+	false,                   -- Giá trị mặc định (false là tắt)
+	function(Value)          -- Hàm thực thi (Value trả về true/false)
+		_G.AutoFarm = Value
+		if Value then
+			print("Đã bật Auto Farm")
+		else
+			print("Đã tắt Auto Farm")
+		end
+	end,
+    "AutoFarmFlag"           -- Flag (để lưu config)
+})
+
+-- >> Tạo Slider (Thanh kéo)
+MainTab:AddSlider({
+	"Tốc Độ Chạy",           -- Tên Slider
+	16,                      -- Giá trị nhỏ nhất (Min)
+	200,                     -- Giá trị lớn nhất (Max)
+	1,                       -- Bước nhảy (Increase)
+	16,                      -- Giá trị mặc định (Default)
+	function(Value)          -- Hàm thực thi
+		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		end
+	end,
+    "WalkSpeedFlag"          -- Flag
+})
+
+-- >> Tạo Dropdown (Menu thả xuống)
+MainTab:AddDropdown({
+	"Chọn Vũ Khí",           -- Tên Dropdown
+	{"Kiếm", "Súng", "Nắm Đấm"}, -- Các lựa chọn
+	"Kiếm",                  -- Lựa chọn mặc định
+	function(Value)          -- Hàm thực thi
+		print("Bạn đã chọn vũ khí: " .. tostring(Value))
+	end,
+    "WeaponFlag"             -- Flag
+})
+
+-- 4. Tạo Tab Cài Đặt (Ví dụ Tab thứ 2)
+local SettingsTab = Window:MakeTab({
+	"Cài Đặt",
+	"settings"
+})
+
+SettingsTab:AddSection("Hệ Thống")
+
+SettingsTab:AddButton({
+	"Tắt Giao Diện",
+	function()
+		-- Hàm đóng GUI (lấy từ thư viện redzlib)
+		game:GetService("CoreGui"):FindFirstChild("redz Library V5"):Destroy()
+	end
+})
+
+-- Thêm nút Minimize (Thu nhỏ) vào giao diện
+Window:AddMinimizeButton({
+	Button = { Image = "rbxassetid://10734896206", BackgroundTransparency = 0 },
+	Corner = { CornerRadius = UDim.new(0, 6) }
+})
+
+--------------------------------------------------------------------------------
+-- KẾT THÚC
+--------------------------------------------------------------------------------
