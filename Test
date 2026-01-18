@@ -1,39 +1,35 @@
--- 1. Tải thư viện từ file của bạn
-local success, redzlib = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudz/refs/heads/main/Test_"))()
-end)
+-- 1. Load thư viện UI từ GitHub của bạn
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud.txt"))()
 
-if not success or not redzlib then
-    warn("Lỗi: Không thể tải hoặc code trong file đang có lỗi cú pháp!")
-    return
-end
+-- 2. Tạo cửa sổ Menu (Sử dụng các hàm có trong file Huyzhud.txt của bạn)
+local Window = redzlib:MakeWindow({
+    Title = "Huy Hub - Bearhub",
+    SubTitle = "by Quang Huy",
+    SaveFolder = "HuyConfig.json"
+})
 
--- 2. Khởi tạo Window (Dùng pcall để tránh crash nếu theme QuangHuy bị lỗi)
-local Window
-local status, err = pcall(function()
-    Window = redzlib:MakeWindow({
-        "Huyzhud Hub", 
-        "QuangHuy Theme", 
-        "HuyzhudConfig.json"
-    })
-end)
+-- 3. Tạo Tab chính
+local MainTab = Window:MakeTab({
+    Title = "Main Script",
+    Icon = "rbxassetid://4483345998" -- Bạn có thể thay ID icon khác
+})
 
-if not status then
-    warn("Lỗi khi tạo Window (có thể do Theme): " .. tostring(err))
-    -- Nếu lỗi Theme, hãy thử ép về theme mặc định:
-    redzlib:SetTheme("Dark") 
-    Window = redzlib:MakeWindow({"Huyzhud Hub", "Sửa lỗi Theme", "Config.json"})
-end
+-- 4. Thêm nút bấm để chạy Bearhub
+MainTab:AddButton({
+    Name = "Kích Hoạt Bearhub",
+    Callback = function()
+        -- Load script Bearhub từ link bạn đã cung cấp
+        loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/Bearhub.lua"))()
+        
+        -- Thông báo nhỏ cho người dùng
+        print("Bearhub Loaded!")
+    end
+})
 
--- 3. Tạo Tab mẫu (Phải có tab thì giao diện mới hiện khung)
-local Tab = Window:MakeTab({"Home", "home"})
-
-Tab:AddSection("Giao diện đã hoạt động!")
-
-Tab:AddButton({
-    "Test Button",
-    "Nếu thấy nút này là thành công",
-    function()
-        print("Clicked!")
+-- 5. Thêm nút bấm để tắt Menu (Tùy chọn)
+MainTab:AddButton({
+    Name = "Destroy UI",
+    Callback = function()
+        redzlib:Destroy()
     end
 })
