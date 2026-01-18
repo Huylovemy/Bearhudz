@@ -1,24 +1,39 @@
-local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudz/refs/heads/main/Test_"))()
+-- 1. Tải thư viện từ file của bạn
+local success, redzlib = pcall(function()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudz/refs/heads/main/Test_"))()
+end)
 
--- Sau khi load thư viện xong, bạn phải gọi lệnh tạo Window thì giao diện mới hiện ra
-local Window = redzlib:MakeWindow({
-    "Huyzhud Hub",       -- Tên hiển thị chính
-    "Phiên bản Test",    -- Tên hiển thị phụ
-    "HuyzhudConfig.json" -- Tên file lưu cấu hình
-})
+if not success or not redzlib then
+    warn("Lỗi: Không thể tải hoặc code trong file đang có lỗi cú pháp!")
+    return
+end
 
--- Thêm ít nhất một Tab để giao diện không bị trống
-local Tab = Window:MakeTab({
-    "Trang Chủ", 
-    "home"
-})
+-- 2. Khởi tạo Window (Dùng pcall để tránh crash nếu theme QuangHuy bị lỗi)
+local Window
+local status, err = pcall(function()
+    Window = redzlib:MakeWindow({
+        "Huyzhud Hub", 
+        "QuangHuy Theme", 
+        "HuyzhudConfig.json"
+    })
+end)
 
-Tab:AddSection("Chào mừng bạn!")
+if not status then
+    warn("Lỗi khi tạo Window (có thể do Theme): " .. tostring(err))
+    -- Nếu lỗi Theme, hãy thử ép về theme mặc định:
+    redzlib:SetTheme("Dark") 
+    Window = redzlib:MakeWindow({"Huyzhud Hub", "Sửa lỗi Theme", "Config.json"})
+end
+
+-- 3. Tạo Tab mẫu (Phải có tab thì giao diện mới hiện khung)
+local Tab = Window:MakeTab({"Home", "home"})
+
+Tab:AddSection("Giao diện đã hoạt động!")
 
 Tab:AddButton({
-    "Thông báo",
-    "Nhấn để kiểm tra hoạt động",
+    "Test Button",
+    "Nếu thấy nút này là thành công",
     function()
-        print("Giao diện đã hoạt động!")
+        print("Clicked!")
     end
 })
