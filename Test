@@ -21,7 +21,7 @@ l_UIStroke_0.Thickness = 2
 l_UIStroke_0.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 l_UIStroke_0.Parent = l_ImageButton_0
 local v471 = {
-    Color3.fromRGB(0,0,0)
+    Color3.fromRGB()
 }
 task.spawn(function()
     local v472 = 1
@@ -70,16 +70,15 @@ l_ImageButton_0.MouseButton1Click:Connect(function()
         v466:Minimize(true)
     end
 end)
-local MainTab = Window:MakeTab({
-    Title = "PvP",
-    Icon = "rbxassetid://4483345998"
-})
-
+local Tab1o = MakeTab({Name = "PvP"})
+     local Tab2o = MakeTab({Name = "Farm"})
+     local Tab3o = MakeTab({Name = "Sever"})
+     local Tab4o = MakeTab({Name = "Khác"})
+     local Tab5o = MakeTab({Name = "99Night"})
+    local Tab6o = MakeTab({Name = "Update"})
 MainTab:AddButton({
     Name = "Bearhub",
     Callback = function()
 loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/Bearhub.lua"))()
-        
-         print("Bearhub Loaded!")
     end
 })
