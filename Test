@@ -1,9 +1,6 @@
--- 1. Load thư viện UI từ GitHub của bạn
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud.txt"))()
-
--- 2. Tạo cửa sổ Menu (Sử dụng các hàm có trong file Huyzhud.txt của bạn)
 local Window = redzlib:MakeWindow({
-    Title = "Huy Hub - Bearhub",
+    Title = "Bearhub(Premium)",
     SubTitle = "by Quang Huy",
     SaveFolder = "HuyConfig.json"
 })
