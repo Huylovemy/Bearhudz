@@ -70,13 +70,296 @@ l_ImageButton_0.MouseButton1Click:Connect(function()
         v466:Minimize(true)
     end
 end)
+------ Tab
 local Tab1o = Window:MakeTab({
     Title = "PvP",
     Icon = "Sword"
 })
-Tab1o:AddButton({
-    Name = "Bearhub",
-    Callback = function()
-loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/Bearhub.lua"))()
-    end
+local Tab2o = Window:MakeTab({
+    Title = "Farm",
+    Icon = "Sword"
 })
+local Tab3o = Window:MakeTab({
+    Title = "Sever",
+    Icon = "Sword"
+})
+local Tab4o = Window:MakeTab({
+    Title = "Khác",
+    Icon = "Sword"
+})
+local Tab5o = Window:MakeTab({
+    Title = "99Night",
+    Icon = "Update"
+})
+local Tab6o = Window:MakeTab({
+    Title = "Update",
+    Icon = "Sword"
+})
+------- BUTTON
+AddButton(Tab1o, {
+     Name = "PvP aim z god",
+    Callback = function() 
+       loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/HUYPVP.lua.txt"))()
+  end
+  })
+AddButton(Tab1o, {
+     Name = "Pvp new",
+    Callback = function()
+	  local script_mode = "PVP" -- PVP, FARM
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Nana",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/NaNacuti/nanabeo/refs/heads/main/NaNaTVHub.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "NHT X hub",
+    Callback = function()
+	  getgenv().Team = "Pirates"
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/Main/refs/heads/main/Hoangtrongdepzai.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Redz real New 100% (working)",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/huy384/redzHub/refs/heads/main/redzHub.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Bear hud",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Huyscript/refs/heads/main/newscript.txt"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "Ring",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudhop/refs/heads/main/Huylovewifemy"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "Ply",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudply/refs/heads/main/Bearhud"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Lucky",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Ytzeno99/bufflucky/refs/heads/main/LucKyRadomFruit.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Blue X Hud",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Night hud",
+    Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/BF-Beta.lua"))()
+  end
+  })
+    AddButton(Tab2o, {
+     Name = "Tuấn Anh IOS",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhTuanDzai-Hub/TuanAnhIOS/refs/heads/main/TuanAnhIOS.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Rise-Evo",
+    Callback = function()
+	  getgenv().Team = "Pirates" --Marines, Pirates
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TrashLua/BloxFruits/main/loadder.lua'))()
+  end
+  })
+    AddButton(Tab1o, {
+     Name = "Huy Top PVP",
+    Callback = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Huy-Top-PvP/refs/heads/main/PVP%20top"))()
+  end
+  })
+  AddButton(Tab2o, {
+     Name = "Gravity Hud",
+    Callback = function() 
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
+  end
+  })
+  AddButton(Tab4o, {
+     Name = "Huy Ply",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/huytong233-hue/Pls/refs/heads/main/Huyply"))()
+  end
+  })
+  AddButton(Tab2o, {
+     Name = "Huy hitbox",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Hitboxgame/refs/heads/main/Hitboxgame"))()
+  end
+  })
+  AddButton(Tab1o, {
+     Name = "PvP Top",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Krovyn/KrovynHub/refs/heads/main/TOP_PVP"))()
+  end
+  })
+AddButton(Tab1o, {
+     Name = "Ambot",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Totocoems/Ace/main/Ace"))()
+  end
+  })
+
+AddButton(Tab1o, {
+     Name = "Tăng hitbox",
+    Callback = function() 
+        loadstring(Game:HttpGet("https://raw.githubusercontent.com/VanThanhIOS/OniiChanVanThanhIOS/refs/heads/main/oniichanpakavanthanhios"))()
+  end
+  })
+  AddButton(Tab2o, {
+     Name = "Quan Tum Onyx",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+  end
+  })
+  AddButton(Tab1o, {
+     Name = "Huy pvp",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Pvp/refs/heads/main/Huypvp"))()
+  end
+  })
+  AddButton(Tab2o, {
+     Name = "Teddy Hud",
+    Callback = function()
+      repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TeddyHub.lua"))()
+  end
+  })
+  AddButton(Tab2o, {
+     Name = "Zis chuối EEG",
+    Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisChuoiEng"))()
+  end
+  })
+AddButton(Tab3o, {
+     Name = "Hop Sever",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Hop-sv/refs/heads/main/Huylovemy"))()
+  end
+  })
+AddButton(Tab3o, {
+     Name = "Teddy Hop Sever",
+    Callback = function() 
+       repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/TEDDYHUB-FREEMIUM"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "King Rùa",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/shinichi-dz/phucshinyeuem/refs/heads/main/KingRuaHub.lua"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Aurora",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Jadelly261/BloxFruits/main/Aurora"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "auto chest",
+    Callback = function()
+      repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+      getgenv().Team = "Marines"
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/trongdeptraihucscript/Main/refs/heads/main/TN-Tp-Chest.lua"))()
+  end
+  })
+AddButton(Tab1o, {
+     Name = "PvP aim chiêu",
+    Callback = function() 
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/PvPvip/refs/heads/main/Pvp"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "ESP Và AIM",
+    Callback = function() 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Hack/refs/heads/main/Huydepzai209"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "God mod v1",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/miglels33/God-Mode-Script/refs/heads/main/GodModeScript.md"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "God mod v2",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Rawbr10/Roblox-Scripts/refs/heads/main/God%20Mode%20Script%20Universal"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "Huy mod",
+    Callback = function() 
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Huy-mod/refs/heads/main/Huy%20mod"))()     
+  end
+  })
+  AddButton(Tab5o, {
+     Name = "Foxname Hud",
+    Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/FoxnameHub.lua"))()
+  end
+  })
+AddButton(Tab4o, {
+     Name = "Fix Lag",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TIKTOK-BOYCHOIGAME/PH-ICH-U/refs/heads/main/FIXLAGV2.BOYCHOIGAME"))()
+  end
+  })
+AddButton(Tab6o, {
+     Name = "Tb Update",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Redz/refs/heads/main/Tb"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Bear hub",
+    Callback = function() 
+        loadstring(game:HttpGet("https://luacrack.site/raw.php/Quanghuy/raw/Bearhub.lua"))()
+  end
+  })
+AddButton(Tab3o, {
+     Name = "Night hub hop sv",
+    Callback = function() 
+        loadstring(game:HttpGet("https://github.com/WhiteX1208/Scripts/blob/main/HopScript.luau?raw=true"))()
+  end
+  })
+AddButton(Tab5o, {
+     Name = "Bear hub",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Night/refs/heads/main/99night"))()
+  end
+  })
+AddButton(Tab1o, {
+     Name = "Void Hub",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidDeveloper67/VoidHub/refs/heads/main/VoidHub"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Banana hub",
+    Callback = function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kaitofixlag-hub/Scriptkaito/refs/heads/main/bananahubkaito.txt"))()
+  end
+  })
+AddButton(Tab2o, {
+     Name = "Leaf hub",
+    Callback = function() 
+repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer
+loadstring(game:HttpGet("https://github.com/LeafHubAcademy/LeafHub/raw/refs/heads/main/Leaf.lua"))()
+  end
+  })
