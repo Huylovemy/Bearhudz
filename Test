@@ -1,101 +1,98 @@
+-[span_3](start_span)- Tải thư viện RedzLib[span_3](end_span)
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/New/refs/heads/main/Huyzhud.txt"))()
+
+-[span_4](start_span)- Tạo Window[span_4](end_span)
 local Window = redzlib:MakeWindow({
     Title = "Bearhub(Premium)",
     SubTitle = "by Quang Huy",
     SaveFolder = false
 })
+
+-[span_5](start_span)- HÀM QUAN TRỌNG: Định nghĩa AddButton để các nút bên dưới hoạt động[span_5](end_span)
+local function AddButton(Tab, Config)
+    return Tab:AddButton(Config)
+end
+
+-[span_6](start_span)- Tạo GUI nút tròn để mở/tắt menu (Draggable)[span_6](end_span)
 local l_ScreenGui_0 = Instance.new("ScreenGui")
 l_ScreenGui_0.Name = "ControlGUI"
 l_ScreenGui_0.Parent = game.CoreGui
+
 local l_ImageButton_0 = Instance.new("ImageButton")
-l_ImageButton_0.Size = UDim2.new(0, 25, 0, 25)
+l_ImageButton_0.Size = UDim2.new(0, 50, 0, 50) -- Chỉnh lại kích thước cho dễ bấm
 l_ImageButton_0.Position = UDim2.new(0.15, 0, 0.15, 0)
 l_ImageButton_0.Image = "rbxassetid://134852113716171"
 l_ImageButton_0.BackgroundTransparency = 1
 l_ImageButton_0.Parent = l_ScreenGui_0
+
 local l_UICorner_0 = Instance.new("UICorner")
-l_UICorner_0.CornerRadius = UDim.new(0.25, 0)
+l_UICorner_0.CornerRadius = UDim.new(0.5, 0)
 l_UICorner_0.Parent = l_ImageButton_0
+
 local l_UIStroke_0 = Instance.new("UIStroke")
 l_UIStroke_0.Thickness = 2
+l_UIStroke_0.Color = Color3.fromRGB(255, 0, 0) -- Màu viền mặc định
 l_UIStroke_0.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 l_UIStroke_0.Parent = l_ImageButton_0
-local v471 = {
-    Color3.fromRGB()
-}
+
+-[span_7](start_span)- Hiệu ứng đổi màu viền (Rainbow)[span_7](end_span)
+local v471 = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(0, 255, 0), Color3.fromRGB(0, 0, 255)}
 task.spawn(function()
     local v472 = 1
     while true do
         l_UIStroke_0.Color = v471[v472]
         v472 = v472 % #v471 + 1
-        task.wait(0.3)
+        task.wait(0.5)
     end
 end)
-local v473 = true
-local v474 = nil
-local v475 = nil
-local v476 = nil
-local v477 = nil
-local function v480(v478)
-    local v479 = v478.Position - v476
-    l_ImageButton_0.Position = UDim2.new(v477.X.Scale, v477.X.Offset + v479.X, v477.Y.Scale, v477.Y.Offset + v479.Y)
-end
-l_ImageButton_0.InputBegan:Connect(function(v481)
-    if v481.UserInputType == Enum.UserInputType.Touch or v481.UserInputType == Enum.UserInputType.MouseButton1 then
-        v474 = true
-        v476 = v481.Position
-        v477 = l_ImageButton_0.Position
-        v481.Changed:Connect(function()
-            if v481.UserInputState == Enum.UserInputState.End then
-                v474 = false
-            end
-        end)
+
+-[span_8](start_span)- Logic Kéo thả nút (Dragging)[span_8](end_span)
+local dragging, dragInput, dragStart, startPos
+l_ImageButton_0.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = l_ImageButton_0.Position
     end
 end)
-l_ImageButton_0.InputChanged:Connect(function(v482)
-    if v482.UserInputType == Enum.UserInputType.Touch or v482.UserInputType == Enum.UserInputType.MouseMovement then
-        v475 = v482
+
+l_ImageButton_0.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
     end
 end)
-game:GetService("UserInputService").InputChanged:Connect(function(v483)
-    if v474 and v483 == v475 then
-        v480(v483)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        l_ImageButton_0.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
 end)
+
+game:GetService("UserInputService").InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
+    end
+end)
+
+-[span_9](start_span)- Logic Bấm nút để đóng/mở Menu (Sửa lỗi v466 thành Window)[span_9](end_span)
+local menuVisible = true
 l_ImageButton_0.MouseButton1Click:Connect(function()
-    v473 = not v473
-    if v473 then
-        v466:Minimize(false)
-    else
-        v466:Minimize(true)
-    end
+    menuVisible = not menuVisible
+    Window:Minimize(not menuVisible)
 end)
------- Tab
-local Tab1o = Window:MakeTab({
-    Title = "PvP",
-    Icon = "Sword"
-})
-local Tab2o = Window:MakeTab({
-    Title = "Farm",
-    Icon = "Sword"
-})
-local Tab3o = Window:MakeTab({
-    Title = "Sever",
-    Icon = "Sword"
-})
-local Tab4o = Window:MakeTab({
-    Title = "Khác",
-    Icon = "Sword"
-})
-local Tab5o = Window:MakeTab({
-    Title = "99Night",
-    Icon = "Update"
-})
-local Tab6o = Window:MakeTab({
-    Title = "Update",
-    Icon = "Sword"
-})
-------- BUTTON
+
+-[span_10](start_span)-- Tạo các Tab[span_10](end_span)
+local Tab1o = Window:MakeTab({ Title = "PvP", Icon = "Sword" })
+local Tab2o = Window:MakeTab({ Title = "Farm", Icon = "Sword" })
+local Tab3o = Window:MakeTab({ Title = "Sever", Icon = "Sword" })
+local Tab4o = Window:MakeTab({ Title = "Khác", Icon = "Sword" })
+local Tab5o = Window:MakeTab({ Title = "99Night", Icon = "Update" })
+local Tab6o = Window:MakeTab({ Title = "Update", Icon = "Sword" })
+
+-[span_11](start_span)------ CÁC NÚT (BUTTONS) [cite: 6 - 17]
+-- Giờ đây hàm AddButton đã hoạt động vì được định nghĩa ở trên
+
 AddButton(Tab1o, {
      Name = "PvP aim z god",
     Callback = function() 
