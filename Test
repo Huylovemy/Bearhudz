@@ -70,7 +70,10 @@ l_ImageButton_0.MouseButton1Click:Connect(function()
         v466:Minimize(true)
     end
 end)
-local Tab1o = v466:MakeTab({"PvP", "Sword"})
+local Tab1o = Window:MakeTab({
+    Title = "PvP",
+    Icon = "Sword"
+})
 Tab1o:AddButton({
     Name = "Bearhub",
     Callback = function()
