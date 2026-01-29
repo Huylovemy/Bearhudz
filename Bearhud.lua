@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://luacrack.site/index.php/Quanghuy/raw/Bearhub.lua"))()
+loadstring(game:HttpGet("https://luacrack.site/index.php/Quanghuy/raw/Bearhub.lua.txt"))()
