@@ -1,4 +1,4 @@
---[[ v1.0.0 https://wearedevs.net/obfuscator ]] 
+--[[ v2.0.0 https://wearedevs.net/obfuscatosr ]] 
 local _1l1ll1 = {}
 local _l1l1l1 = ""
 
