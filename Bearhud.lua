@@ -1,4 +1,3 @@
---[[ v2.0.0 https://wearhedevs.net/obfuscatosr ]]
 local _1l1ll1 = {}
 local _l1l1l1 = ""
 
